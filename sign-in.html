@@ -1,4 +1,3 @@
-<!-- signin.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +50,7 @@
     </footer>
 
     <script>
-        // Sign In Form Validation and Simulation
+        
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('signinForm');
             const emailInput = document.getElementById('signinEmail');
@@ -65,7 +64,7 @@
                 e.preventDefault();
                 let valid = true;
 
-                // Reset previous errors
+                
                 emailError.textContent = '';
                 passwordError.textContent = '';
                 successMessage.textContent = '';
@@ -83,7 +82,7 @@
                 }
 
                 if (valid) {
-                    // Simulate successful sign in
+                    //successful sign in
                     successMessage.textContent = 'Sign In successful! Redirecting to your account...';
                     setTimeout(() => {
                         window.location.href = 'account.html';
