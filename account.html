@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account - Sindiso's Question and Answer</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Sindiso's Question and Answer</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Sign Out</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main-content">
+      <section id="quizSection">
+        <h2>Interactive Quiz</h2>
+        <div id="quizContainer">
+          <div id="quiz">
+            <h3 id="question">Question text</h3>
+            <ul id="options"></ul>
+            <button id="nextButton" class="btn">Next</button>
+          </div>
+          <div id="result" class="hidden">
+            <h3>Your Score: <span id="score"></span>/<span id="total"></span></h3>
+            <button id="restartButton" class="btn">Restart Quiz</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 My Web Application. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
+  <script src="quiz.js"></script>
+</body>
+</html>
