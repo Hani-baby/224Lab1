@@ -1,0 +1,124 @@
+<!-- register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Haniel's Question and Answer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Haniel's Question and Answer</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sign-in.html">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Navigate</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sign-in.html">Sign In</a></li>
+                <li><a href="account.html">Account</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <section>
+                <h2>Register</h2>
+                <form id="registrationForm" novalidate>
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required minlength="3">
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required minlength="6">
+                        <span class="error-message" id="passwordError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required minlength="6">
+                        <span class="error-message" id="confirmPasswordError"></span>
+                    </div>
+                    <button type="submit">Register</button>
+                </form>
+                <div id="successMessage" class="success-message"></div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2025 Haniel's Question and Answer. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Registration Form Validation and Simulation
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('registrationForm');
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+            const passwordError = document.getElementById('passwordError');
+            const confirmPasswordError = document.getElementById('confirmPasswordError');
+            const successMessage = document.getElementById('successMessage');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                let valid = true;
+
+                // Reset previous errors
+                nameError.textContent = '';
+                emailError.textContent = '';
+                passwordError.textContent = '';
+                confirmPasswordError.textContent = '';
+                successMessage.textContent = '';
+
+                // Name Validation
+                if (nameInput.value.trim().length < 3) {
+                    nameError.textContent = 'Name must be at least 3 characters.';
+                    valid = false;
+                }
+
+                // Email Validation
+                if (!emailInput.validity.valid) {
+                    emailError.textContent = 'Please enter a valid email address.';
+                    valid = false;
+                }
+
+                // Password Validation
+                if (passwordInput.value.length < 6) {
+                    passwordError.textContent = 'Password must be at least 6 characters.';
+                    valid = false;
+                }
+
+                // Confirm Password Validation
+                if (confirmPasswordInput.value !== passwordInput.value) {
+                    confirmPasswordError.textContent = 'Passwords do not match.';
+                    valid = false;
+                }
+
+                if (valid) {
+                    // Simulate successful registration
+                    successMessage.textContent = 'Registration successful! Redirecting to your account...';
+                    setTimeout(() => {
+                        window.location.href = 'account.html';
+                    }, 1500);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
